@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 Jerin - Portfolio </title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto+Mono:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Audiowide&display=swap" rel="stylesheet">
+
+<style>
+/* RESET & BASE */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html, body {
+  width:100%;
+  max-width:100vw;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+body {
+  font-family:'JetBrains Mono', monospace;
+  background:#0f0f0f;
+  color:#eee;
+  line-height:1.6;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* LINKS & IMAGES */
+a {text-decoration:none; color:inherit;}
+img {max-width:100%; border-radius:12px; display:block; margin:auto;}
+
+/* HEADER */
+header {
+  text-align:center;
+  padding:6rem 2rem 8rem 2rem;
+  background:linear-gradient(135deg,#ff0055,#00bbff,#00ff88,#ffbb00);
+  background-size:400% 400%;
+  animation:gradientBG 15s ease infinite;
+  border-bottom-left-radius:50px;
+  border-bottom-right-radius:50px;
+  box-shadow:0 10px 50px rgba(0,0,0,0.7);
+}
+@keyframes gradientBG {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ZOHO LOGO BOXES */
+.zoho-logo {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:2rem;
+  flex-wrap:wrap;
+}
+.zoho-box {
+  width:90px; height:90px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Orbitron', sans-serif;
+  font-size:3rem; font-weight:bold;
+  border-radius:20px;
+  color:white;
+  box-shadow:0 0 25px #fff inset,0 0 50px #000;
+  transition:0.5s all ease; cursor:pointer;
+}
+.zoho-box:nth-child(1){background:#E53935;}
+.zoho-box:nth-child(2){background:#1E88E5;}
+.zoho-box:nth-child(3){background:#43A047;}
+.zoho-box:nth-child(4){background:#FDD835; color:#111;}
+.zoho-box:hover {
+  transform:scale(1.2) rotateY(180deg);
+  box-shadow:0 0 50px #fff;
+}
+
+/* HEADER TEXT */
+header h1 {
+  font-family:'Orbitron', sans-serif;
+  font-size:clamp(2.5rem, 6vw, 4rem);
+  margin-bottom:1rem;
+  text-shadow:0 0 10px #fff,0 0 20px #ff0055,0 0 30px #00ff88;
+}
+
+/* NAVIGATION */
+nav {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:1rem;
+  background:#111;
+  padding:1rem;
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:2px solid #E53935;
+}
+nav a {
+  font-family:'Orbitron', sans-serif;
+  font-weight:bold;
+  font-size:0.95rem;
+  padding:0.6rem 1.2rem;
+  border-radius:12px;
+  transition:0.3s;
+}
+nav a:hover {
+  background:#E53935;
+  color:#fff;
+  box-shadow:0 0 15px #E53935,0 0 25px #ffbb00;
+}
+
+/* SECTIONS */
+section {
+  padding:5rem 2rem;
+  max-width:1200px;
+  margin:auto;
+}
+section h2 {
+  text-align:center;
+  font-size:2.5rem;
+  color:#00ff88;
+  margin-bottom:3rem;
+  text-shadow:0 0 10px #00ff88,0 0 20px #00bbff,0 0 30px #ff0055;
+  font-family:'Orbitron', sans-serif;
+  position:relative;
+}
+section h2::after {
+  content:'';
+  width:100px;
+  height:4px;
+  background:#00ff88;
+  display:block;
+  margin:0.5rem auto;
+  border-radius:2px;
+}
+
+/* CARD BASE */
+.card {
+  background:rgba(17,17,17,0.6);
+  border-radius:25px;
+  padding:2rem;
+  margin:1.5rem 0;
+  box-shadow:0 0 35px rgba(0,255,136,0.4),0 0 70px rgba(0,187,255,0.2);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(0,255,136,0.3);
+  transition:transform 0.5s, box-shadow 0.5s;
+}
+.card:hover {
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 0 60px #00ff88,0 0 100px #00bbff;
+}
+
+/* ABOUT */
+.about {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:40px;
+  text-align:center;
+}
+.about img {
+  width:220px; height:220px;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid #00ff88;
+  box-shadow:0 0 30px #00ff88,0 0 60px #00bbff,0 0 90px #ff0055;
+  transition:transform 0.5s, box-shadow 0.5s;
+}
+.about img:hover {
+  transform:scale(1.1);
+  box-shadow:0 0 50px #ff0055,0 0 100px #00bbff,0 0 150px #00ff88;
+}
+
+/* TIMELINE */
+.timeline {display:grid; gap:2rem;}
+.timeline-item {
+  background:rgba(17,17,17,0.6);
+  padding:2rem;
+  border-left:6px solid #00ff88;
+  border-radius:20px;
+  box-shadow:0 0 35px rgba(0,255,136,0.4);
+  transform:translateX(-50px);
+  opacity:0;
+  transition:0.8s all;
+}
+.timeline-item.show {opacity:1; transform:translateX(0);}
+.timeline-item h3 {
+  color:#00ff88;
+  text-shadow:0 0 15px #00ff88,0 0 25px #00bbff,0 0 35px #ff0055;
+  margin-bottom:0.5rem;
+}
+
+/* SKILLS */
+.skills {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:2rem;
+  text-align:center;
+}
+.skills .card h3 {
+  font-family:'Orbitron', sans-serif;
+  font-size:1.5rem;
+}
+
+/* CONTACT */
+.contact-info {text-align:center;}
+.contact-info a {
+  display:inline-block;
+  margin:0.6rem;
+  padding:0.9rem 2rem;
+  font-weight:bold;
+  color:#111;
+  background:#00ff88;
+  border-radius:12px;
+  box-shadow:0 0 25px #00ff88,0 0 50px #00bbff;
+  transition:0.3s all;
+  font-family:'Orbitron', sans-serif;
+}
+.contact-info a:hover {
+  background:#00bb88;
+  transform:scale(1.1);
+  box-shadow:0 0 50px #00ff88,0 0 100px #00bbff;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:3rem 1rem;
+  color:#fff;
+  background:#111;
+  border-top:2px solid #00ff88;
+  text-shadow:0 0 15px #00ff88,0 0 30px #00bbff;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width:768px){
+  header {padding:4rem 1rem 6rem; border-radius:0;}
+  .zoho-box {width:65px;height:65px;font-size:2rem;}
+  nav {gap:0.4rem;padding:0.6rem;}
+  nav a {font-size:0.85rem;padding:0.5rem 0.8rem;}
+  section {padding:3rem 1rem;}
+  .about img {width:150px;height:150px;}
+  .card {padding:1.5rem;}
+  .skills {grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="zoho-logo">
+    <div class="zoho-box">J</div>
+    <div class="zoho-box">E</div>
+    <div class="zoho-box">R</div>
+    <div class="zoho-box">I</div>
+    <div class="zoho-box">N</div>
+  </div>
+<!-- Google Font link -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+<h2 style="
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  text-shadow: 0 0 4px black, 0 0 8px black;
+">
+  Do good, Be good, Good deserves you 🪄
+</h2>
+
+
+</header>
+
+<nav>
+  <a href="#about">💫 About</a>
+  <a href="#education">🎓 Education</a>
+  <a href="#projects">💻 Projects</a>
+  <a href="#achievements">🏆 Achievements</a>
+  <a href="#skills">🛠️ Skills</a>
+  <a href="#growth">📈 Learning Path</a>
+  <a href="#contact">📬 Contact</a>
+</nav>
+
+<section id="about" class="about">
+  <img src="jerin.jpeg" alt="Jerin's Photo">
+  <div class="card">
+    <h2>About Me ✨</h2>
+    <p style="font-family:'Audiowide',sans-serif;font-size:clamp(2.5rem,6vw,3.8rem);font-weight:700;color:#ffffff;text-shadow:0 0 10px #fff,0 0 25px #00ff88,0 0 45px #00bbff;letter-spacing:4px;">
+      JERIN✓
+    </p><br>
+    <p>→ Curious and creative learner ❤️ exploring the world of technology with passion and persistence! I’ve learned Python basics and fundamental programming concepts, and I’m now enhancing my skills to build a strong foundation in coding, logic, and problem-solving 🚀. Every challenge fuels my growth toward innovation and bigger dreams 🌟.
+ Exploring Zestober 2025 with dedication and excitement! 🔆 </p>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education 🎓</h2>
+  <div class="card">
+    <p>→ Completed Class 12 (Computer Science) under Tamil Nadu State Board with <strong>91%</strong>.</p>
+    <p>→ Building strong foundation in programming, logic, and problem-solving 🛠️.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects 💻</h2>
+  <div class="card">
+    <h3 style="font-family:'Orbitron',sans-serif;font-size:2rem;color:#ff6600;text-shadow:0 0 15px #ff9933;">Zoho Aura 🚀</h3>
+    <p>→ Creating Aura dashboards, smart Budget Planner 💰, and digital Blessings ✨ projects!</p>
+  </div>
+</section>
+
+<section id="achievements">
+  <h2>Achievements 🏆</h2>
+  <div class="card">
+    <p>🎓 Completed Basics certifications from Microsoft, Wadhwani Foundation, MongoDB, and HackerRank 🌟.</p>
+    <p>💡 Zoho Schools Zestober Completion - Enhancing as Python Programmer.</p>
+    <p>🔗 GitHub: <a href="https://github.com/JERIN-NOBLE" target="_blank">github.com/JERIN-NOBLE</a></p>
+    <p>🔗 HackerRank: <a href="https://www.hackerrank.com/profile/jerinnoble0223" target="_blank">hackerrank.com/jerinnoble0223</a></p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills 🛠️</h2>
+  <div class="skills">
+    <div class="card">
+      <h3>🚀 Coding Evolution</h3><br>
+      <p>Learned Python basic Coding , Enhancing - Python Programmer 🌱</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Web - Beginner </h3><br>
+      <p>HTML, CSS, JavaScript — learning UI magic ✨</p>
+    </div>
+    <div class="card">
+      <h3>🛠️ Tools</h3><br>
+      <p>VS Code, GitHub, HackerRank 🏷️</p>
+    </div>
+    <div class="card">
+      <h3>💡 Soft Skills</h3><br>
+      <p> Basic Problem Solving, Communication, Teamwork 🕸️</p>
+    </div>
+  </div>
+</section>
+
+<section id="growth">
+  <h2>Learning Path 📈</h2>
+  <div class="timeline">
+    <div class="timeline-item"><h3>🚀 Zestober 2025</h3><p>→ Started daily coding and learning journey 🌟</p></div>
+    <div class="timeline-item"><h3>🌱 Next Steps</h3><p>→ Strengthening programming logic, building projects, and mastering Python 🧠</p></div>
+    <div class="timeline-item"><h3>🌟 Future</h3><p>→ Contribute to technology, create innovative tools, inspire innovation everywhere✨</p>
+</section>
+
+<section id="contact">
+  <div class="card contact-info">
+    <h2>Contact Me 📬</h2>
+    <p>Email: <strong>jerinnoble0223@gmail.com</strong></p>
+    <p>Phone: <strong>+91 63806 82763</strong></p><br>
+    <a href="https://github.com/JERIN-NOBLE" target="_blank">🌐 GitHub</a>
+    <a href="https://www.hackerrank.com/profile/jerinnoble0223" target="_blank">🏆 HackerRank</a>
+  </div>
+</section>
+
+<footer>
+  <p>©copyright <b>Jerin✓</b></p>
+</footer>
+
+<script>
+const cards=document.querySelectorAll('.card');
+const timeline=document.querySelectorAll('.timeline-item');
+function reveal(){
+  const trigger=window.innerHeight*0.85;
+  cards.forEach(c=>c.getBoundingClientRect().top<trigger?c.classList.add('show'):null);
+  timeline.forEach(t=>t.getBoundingClientRect().top<trigger?t.classList.add('show'):null);
+}
+window.addEventListener('scroll',reveal);
+window.addEventListener('load',reveal);
+
+document.querySelectorAll('nav a').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
